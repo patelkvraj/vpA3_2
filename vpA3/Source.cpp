@@ -45,7 +45,8 @@ _________________
 *										I wrote the comment for getLowest(). I wrote the definition and body of getHighest(), getSum(), and getAverage(). Also, I added the comment for all
 										three methods. 
 	11/19/2022			VP				I converted regular for-loop(Print the content on the screen) to range based for-loop (line 103). I added a while loop, and it will repeat until the user 
-										enters a valid file name.
+										enters a valid file name. 
+	Later "Revision History" are on github
 */
 
 /* 
