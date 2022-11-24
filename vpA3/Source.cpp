@@ -58,6 +58,7 @@ _________________
 using namespace std;
 
 /* Function prototypes */
+bool validateData(int);
 void readNumbers(ifstream&, int [], int);
 int getLowest(int [], int);
 int getHighest(int [], int);
@@ -95,7 +96,7 @@ int main() {
 
 	readNumbers(infile, numbers, ARRAY_SIZE);	//	Transfer the data from a file into an array
 
-	char response;	// To hold user's respond for the menu.
+	int response;	// To hold user's respond for the menu.
 
 	/* The menu wil repeat until the user ends it */
 	do {
@@ -110,6 +111,10 @@ int main() {
 		cout << "\n 6) Exit the program";
 		cout << "\n\nOption Number? :: ";
 		cin >> response;
+
+		if (!(validateData(response))) {
+			continue;
+		}
 
 		/** A switch statement to perform specific tasks based on user's selected option **/
 		switch (response) {
@@ -144,7 +149,7 @@ int main() {
 				cout << "\nWARNING: Please select a valid option\n";
 			}
 		}
-	} while (response != '6');
+	} while (response != 6);
 
 	infile.close();	//	Close a text file
 
@@ -158,43 +163,19 @@ int main() {
 ****************************************************
 Name	:	validateData()
 Purpose	:	To valid no user input is less than zero
-Input	:	double, char
-Output	:	double
+Input	:	double
+Output	:	bool
 ****************************************************
 */
-//double validateData(double number, char which_charge) {
-//	while (number < 0) {
-//		cout << "\nWarning: Please enter a valid response.\n\n";
-//
-//		/** A switch statement to give the user another attempt to enter a valid reponse **/
-//		switch (which_charge) {
-//			case 'D': {	//	Room's rate at the hospital
-//				cout << "Number of days in the hospital: ";
-//				cin >> number;
-//				break;
-//			}			
-//			case 'R': {	//	Room's rate at the hospital
-//				cout << "Daily room rate: $";
-//				cin >> number;
-//				break;
-//			}
-//			case 'O': {	//	A patient's other charges
-//				cout << "Lab fees and other service charges: $";
-//				cin >> number;
-//				break;
-//			}
-//			case 'M': {	//	A patient's medication charges
-//				cout << "Medication charges: $";
-//				cin >> number;
-//				break;
-//			}
-//			default: {	//	In case something goes wrong
-//				cout << "\nWarning: Something went wrong. Please run the program again.";
-//			}
-//		}
-//	}
-//	return number;		//	Return the valid reponse
-//}
+bool validateData(int response) {
+	if (response < 0) {
+		cout << "\nWarning: Please enter a valid response.\n";
+		return false;	// Return false if it's not a valid reponse
+	}
+	else {
+		return true;	// Return true if it's a valid reponse
+	}
+}
 
 /*
 ***************************************************************************
