@@ -101,7 +101,7 @@ int main() {
 	do {
 		/** A "Menu" for better user experience **/
 		cout << "\n--------------Main Menu--------------";
-		cout << "\n\nPlease select option 1/2/..6 below: ";
+		cout << "\n\nPlease select option 1/2/..5 below: ";
 		cout << "\n 1) Print the content of the file";
 		cout << "\n 2) The lowest number";
 		cout << "\n 3) The highest number";
@@ -153,48 +153,6 @@ int main() {
 	return 0;	//	No return 
 }	//	End of the main function
 
-
-/*
-****************************************************
-Name	:	validateData()
-Purpose	:	To valid no user input is less than zero
-Input	:	double, char
-Output	:	double
-****************************************************
-*/
-//double validateData(double number, char which_charge) {
-//	while (number < 0) {
-//		cout << "\nWarning: Please enter a valid response.\n\n";
-//
-//		/** A switch statement to give the user another attempt to enter a valid reponse **/
-//		switch (which_charge) {
-//			case 'D': {	//	Room's rate at the hospital
-//				cout << "Number of days in the hospital: ";
-//				cin >> number;
-//				break;
-//			}			
-//			case 'R': {	//	Room's rate at the hospital
-//				cout << "Daily room rate: $";
-//				cin >> number;
-//				break;
-//			}
-//			case 'O': {	//	A patient's other charges
-//				cout << "Lab fees and other service charges: $";
-//				cin >> number;
-//				break;
-//			}
-//			case 'M': {	//	A patient's medication charges
-//				cout << "Medication charges: $";
-//				cin >> number;
-//				break;
-//			}
-//			default: {	//	In case something goes wrong
-//				cout << "\nWarning: Something went wrong. Please run the program again.";
-//			}
-//		}
-//	}
-//	return number;		//	Return the valid reponse
-//}
 
 /*
 ***************************************************************************
