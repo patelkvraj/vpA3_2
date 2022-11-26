@@ -118,7 +118,7 @@ int main() {
 
 		/** A switch statement to perform specific tasks based on user's selected option **/
 		switch (response) {
-			case '1': {		//	Option 1		
+			case 1: {		//	Option 1		
 				/* Print the content of the file */
 				cout << "\n=> The content of the file: \n";
 				for (int val : numbers) {
@@ -126,23 +126,23 @@ int main() {
 				}
 				break;
 			}
-			case '2': {		//	Option 1		
+			case 2: {		//	Option 1		
 				cout << endl << "=> The lowest number: " << getLowest(numbers, ARRAY_SIZE) << endl;			// Give and print the lowest number from the array
 				break;
 			}
-			case '3': {		//	Option 2	
+			case 3: {		//	Option 2	
 				cout << endl << "=> The highest number: " << getHighest(numbers, ARRAY_SIZE) << endl;			// Give and print the highest number from the array
 				break;
 			}
-			case '4': {		//	Option 3			
+			case 4: {		//	Option 3			
 				cout << endl << "=> The total of the numbers: " << getSum(numbers, ARRAY_SIZE) << endl;			// Give and print the total of the numbers in the array
 				break;
 			}		
-			case '5': {		//	Option 2	
+			case 5: {		//	Option 2	
 				cout << endl << "=> The average of the numbers: " << getAverage(numbers, ARRAY_SIZE) << endl;	// Give and print the total of the numbers in the array
 				break;
 			}
-			case '6': {		//	Option 3			
+			case 6: {		//	Option 3			
 				exit(0);	//	Exit successfully
 			}
 			default: {
