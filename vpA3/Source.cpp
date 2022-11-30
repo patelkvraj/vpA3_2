@@ -50,7 +50,8 @@ _________________
 */
 
 /* 
-	WORK ON:	-
+	WORK ON: I changed back the cases of the switch statment to type "char". 
+			 I changed the data type of "response" variable to "int".
 */
 
 #include <iostream>
@@ -96,7 +97,7 @@ int main() {
 
 	readNumbers(infile, numbers, ARRAY_SIZE);	//	Transfer the data from a file into an array
 
-	int response;	// To hold user's respond for the menu.
+	int response;		// To hold user's respond for the menu
 
 	/* The menu wil repeat until the user ends it */
 	do {
@@ -112,9 +113,7 @@ int main() {
 		cout << "\n\nOption Number? :: ";
 		cin >> response;
 
-		if (!(validateData(response))) {
-			continue;
-		}
+		validateData(response);	
 
 		/** A switch statement to perform specific tasks based on user's selected option **/
 		switch (response) {
@@ -149,7 +148,7 @@ int main() {
 				cout << "\nWARNING: Please select a valid option\n";
 			}
 		}
-	} while (response != 6);
+	} while (response !=  6);
 
 	infile.close();	//	Close a text file
 
@@ -168,6 +167,14 @@ Output	:	bool
 ****************************************************
 */
 bool validateData(int response) {
+
+	/** handle non-int type **/
+	if (cin.fail()) {
+		cin.clear();	// clear input buffer to restore cin to a usable statek
+		cin.ignore();	// ignore characters from the input buffer
+		return false;
+	}
+
 	if (response < 0) {
 		cout << "\nWarning: Please enter a valid response.\n";
 		return false;	// Return false if it's not a valid reponse
@@ -182,7 +189,7 @@ bool validateData(int response) {
 Name	:		readNumbers()
 Purpose	:		Read the content of a file into an array
 Input	:		ifstream, int [], int
-Output	:		N/A
+Output	:		n/a
 ***************************************************************************
 */
 void readNumbers(ifstream &file, int array[], int array_size) {
