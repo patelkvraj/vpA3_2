@@ -113,7 +113,7 @@ int main() {
 		cout << "\n\nOption Number? :: ";
 		cin >> response;
 
-		validateData(response);	
+		validateData(response);	//	returns true or false
 
 		/** A switch statement to perform specific tasks based on user's selected option **/
 		switch (response) {
@@ -173,14 +173,6 @@ bool validateData(int response) {
 		cin.clear();	// clear input buffer to restore cin to a usable statek
 		cin.ignore();	// ignore characters from the input buffer
 		return false;
-	}
-
-	if (response < 0) {
-		cout << "\nWarning: Please enter a valid response.\n";
-		return false;	// Return false if it's not a valid reponse
-	}
-	else {
-		return true;	// Return true if it's a valid reponse
 	}
 }
 
