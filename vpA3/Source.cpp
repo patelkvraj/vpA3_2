@@ -16,6 +16,7 @@ ABOUT THE PROGRAM:
 __________________
 	
 	Part - 2
+		Name		:	vpA3
 		Created on	:	11/13/2022
 		Title (Name):	Assignment 3 (Part 2)
 		Description	:	A program that asks the user for a file name (Assume the file contains a series of numbers, each written on a separate line). 
@@ -65,6 +66,7 @@ int getLowest(int [], int);
 int getHighest(int [], int);
 int getSum(int [], int);
 double getAverage(int [], int);
+void swap(int, int);
 
 int main() {
 
@@ -281,3 +283,17 @@ double getAverage(int array[], int array_size) {
 
 	return total / 2.0;	//	Returns the average of the numbers
 }	//	End of the getAverage() function
+
+/*
+***************************************************************************
+Name	:	swap()
+Purpose	:	Swap 2 elements (Interchange values)
+Input	:	int, int
+Output	:	N/A
+***************************************************************************
+*/
+void swap(int a, int b) {
+	int temp = a;
+	a = b;
+	b = temp;
+}
