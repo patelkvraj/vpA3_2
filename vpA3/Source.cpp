@@ -141,18 +141,17 @@ int main() {
 				cout << endl << "=> The average of the numbers: " << getAverage(numbers, ARRAY_SIZE) << endl;	// Give and print the total of the numbers in the array
 				break;
 			}
-			case 6: {		//	Option 3			
-				exit(0);	//	Exit successfully
+			case 6: {		//	Option 3		
+				infile.close();					//	Close a text file
+				cout << "\n\n";					//	To have some space at the end of the program
+				cout << "___________________________________________";	
+				exit(0);						//	Exit successfully
 			}
 			default: {
 				cout << "\nWARNING: Please select a valid option\n";
 			}
 		}
 	} while (response !=  6);
-
-	infile.close();	//	Close a text file
-
-	cout << "\n\n\n";	//	To have some space at the end of the program
 
 	return 0;	//	No return 
 }	//	End of the main function
@@ -167,7 +166,6 @@ Output	:	bool
 ****************************************************
 */
 bool validateData(int response) {
-
 	/** handle non-int type **/
 	if (cin.fail()) {
 		cin.clear();	// clear input buffer to restore cin to a usable statek
