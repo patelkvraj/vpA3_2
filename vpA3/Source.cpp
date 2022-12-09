@@ -184,12 +184,12 @@ bool validateData(int response) {
 }
 
 /*
-***************************************************************************
+********************************************************
 Name	:		readNumbers()
 Purpose	:		Read the content of a file into an array
 Input	:		ifstream, int [], int
 Output	:		n/a
-***************************************************************************
+********************************************************
 */
 void readNumbers(ifstream &file, int array[], int array_size) {
 
@@ -202,12 +202,12 @@ void readNumbers(ifstream &file, int array[], int array_size) {
 
 
 /*
-***************************************************************************
+************************************************
 Name	:	getLowest()
 Purpose	:	Give the lowest number from an array
 Input	:	int [], int
 Output	:	int 
-***************************************************************************
+************************************************
 */
 int getLowest(int array[], int array_size) {
 
@@ -225,12 +225,12 @@ int getLowest(int array[], int array_size) {
 
 
 /*
-***************************************************************************
+*************************************************
 Name	:	getHighest()
 Purpose	:	Give the highest number from an array
 Input	:	int [], int
 Output	:	int
-***************************************************************************
+*************************************************
 */
 int getHighest(int array[], int array_size) {
 
@@ -249,12 +249,12 @@ int getHighest(int array[], int array_size) {
 
 
 /*
-***************************************************************************
+******************************************************
 Name	:	getSum()
 Purpose	:	Give the total of the numbers in the array
 Input	:	int [], int
 Output	:	int
-***************************************************************************
+******************************************************
 */
 int getSum(int array[], int array_size) {
 
@@ -271,12 +271,12 @@ int getSum(int array[], int array_size) {
 
 
 /*
-***************************************************************************
+********************************************************
 Name	:	getAverage()
 Purpose	:	Give the average of the numbers in the array
 Input	:	int [], int
 Output	:	int
-***************************************************************************
+********************************************************
 */
 double getAverage(int array[], int array_size) {
 	
@@ -292,35 +292,37 @@ double getAverage(int array[], int array_size) {
 }	//	End of the getAverage() function
 
 /*
-***************************************************************************
+************************************************
 Name	:	swap()
 Purpose	:	Swap 2 elements (Interchange values)
 Input	:	int, int
 Output	:	N/A
-***************************************************************************
+************************************************
 */
 void swap(int& a, int& b) {
-	int temp = a;
+	int temp = a;	
 	a = b;
 	b = temp;
 }
 
 /*
-***************************************************************************
+********************************************
 Name	:	bubbleSort()
 Purpose	:	Sort the list in ascending order
 Input	:	int [], int
 Output	:	N/A
-***************************************************************************
+********************************************
 */
 void bubbleSort(int arr[], int size) {
-	int maxElement;
-	int index;
+	int maxElement;	
+	int index;		
 
+	/** Outer for-loop: starts at the back of the list **/
 	for (maxElement = size - 1; maxElement > 0; maxElement--) {		
+		/*** Inner for-loop: pass through each elements ***/
 		for (index = 0; index < maxElement; index++) {				
-			if (arr[index] > arr[index + 1]) {
-				swap(arr[index], arr[index + 1]);
+			if (arr[index] > arr[index + 1]) {		// if ( current index > following index )
+				swap(arr[index], arr[index + 1]);	// swap elements 
 			}
 		}
 	}
