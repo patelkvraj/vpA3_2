@@ -66,7 +66,8 @@ int getLowest(int [], int);
 int getHighest(int [], int);
 int getSum(int [], int);
 double getAverage(int [], int);
-void swap(int, int);
+void swap(int &, int &);
+void bubbleSort(int [], int);
 
 int main() {
 
@@ -111,7 +112,8 @@ int main() {
 		cout << "\n 3) The highest number";
 		cout << "\n 4) The total of the numbers";
 		cout << "\n 5) The average of the numbers";
-		cout << "\n 6) Exit the program";
+		cout << "\n 6) Sort the list in ascending order";
+		cout << "\n 7) Exit the program";
 		cout << "\n\nOption Number? :: ";
 		cin >> response;
 
@@ -142,8 +144,13 @@ int main() {
 			case 5: {		//	Option 2	
 				cout << endl << "=> The average of the numbers: " << getAverage(numbers, ARRAY_SIZE) << endl;	// Give and print the total of the numbers in the array
 				break;
+			}	
+			case 6: {		//	Option 2	
+				bubbleSort(numbers, ARRAY_SIZE);
+				cout << "\n=> The list is sorted in ascending order.\n";
+				break;
 			}
-			case 6: {		//	Option 3		
+			case 7: {		//	Option 3		
 				infile.close();					//	Close a text file
 				cout << "\n\n";					//	To have some space at the end of the program
 				cout << "___________________________________________";	
@@ -153,7 +160,7 @@ int main() {
 				cout << "\nWARNING: Please select a valid option\n";
 			}
 		}
-	} while (response !=  6);
+	} while (true);
 
 	return 0;	//	No return 
 }	//	End of the main function
@@ -292,8 +299,29 @@ Input	:	int, int
 Output	:	N/A
 ***************************************************************************
 */
-void swap(int a, int b) {
+void swap(int& a, int& b) {
 	int temp = a;
 	a = b;
 	b = temp;
+}
+
+/*
+***************************************************************************
+Name	:	bubbleSort()
+Purpose	:	Sort the list in ascending order
+Input	:	int [], int
+Output	:	N/A
+***************************************************************************
+*/
+void bubbleSort(int arr[], int size) {
+	int maxElement;
+	int index;
+
+	for (maxElement = size - 1; maxElement > 0; maxElement--) {		
+		for (index = 0; index < maxElement; index++) {				
+			if (arr[index] > arr[index + 1]) {
+				swap(arr[index], arr[index + 1]);
+			}
+		}
+	}
 }
