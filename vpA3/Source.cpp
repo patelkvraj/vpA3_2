@@ -67,7 +67,7 @@ int getHighest(int [], int);
 int getSum(int [], int);
 double getAverage(int [], int);
 void swap(int &, int &);
-void bubbleSort(int [], int);
+void selectionSort(int [], int);
 
 int main() {
 
@@ -146,7 +146,7 @@ int main() {
 				break;
 			}	
 			case 6: {		//	Option 2	
-				bubbleSort(numbers, ARRAY_SIZE);
+				selectionSort(numbers, ARRAY_SIZE);
 				cout << "\n=> The list is sorted in ascending order.\n";
 				break;
 			}
@@ -307,23 +307,27 @@ void swap(int& a, int& b) {
 
 /*
 ********************************************
-Name	:	bubbleSort()
+Name	:	selectionSort()
 Purpose	:	Sort the list in ascending order
 Input	:	int [], int
 Output	:	N/A
 ********************************************
 */
-void bubbleSort(int arr[], int size) {
-	int maxElement;	
-	int index;		
+void selectionSort(int arr[], int size) {
+	int minIndex;	
+	int minValue;		
 
-	/** Outer for-loop: starts at the back of the list **/
-	for (maxElement = size - 1; maxElement > 0; maxElement--) {		
-		/*** Inner for-loop: pass through each elements ***/
-		for (index = 0; index < maxElement; index++) {				
-			if (arr[index] > arr[index + 1]) {		// if ( current index > following index )
-				swap(arr[index], arr[index + 1]);	// swap elements 
+	/** Outer for-loop **/
+	for (int start = 0; start < (size - 1); start++) {	
+		minIndex = start;		//	store minimum index in an array
+		minValue = arr[start];	//	store minimum value in an array
+		/*** Inner for-loop ***/
+		for (int index = start + 1; index < size; index++) {				
+			if (arr[index] < minValue) {	
+				minValue = arr[index];	
+				minIndex = index;
 			}
 		}
+		swap(arr[minIndex], arr[start]);	//	swap elements
 	}
 }
